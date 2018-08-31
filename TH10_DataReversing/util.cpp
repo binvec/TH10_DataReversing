@@ -3,7 +3,8 @@
 bool GetProcessIdByName(const char * exeFileName, int& pid)
 {
 	pid = 0;
-	PROCESSENTRY32 pe;
+	PROCESSENTRY32 pe = { 0 };
+	pe.dwSize = sizeof(PROCESSENTRY32);
 	HANDLE hsnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	Process32First(hsnap, &pe);
 	do
