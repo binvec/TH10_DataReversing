@@ -205,7 +205,7 @@ void DataReader::GetPlayerInfo(Player& plyr)
 	plyr.w = Read<float>(base_addr + 0x41C) * 2;
 	plyr.slow = Read<int>(base_addr + 0x4474);
 	plyr.h = plyr.w;
-	plyr.powers = Read<float>(0x00474C48) / 20;
+	plyr.powers = Read<int>(0x00474C48) / 20;
 	plyr.type = Read<int>(0x00474C68);
 	plyr.itemObtainRange = Read<float>(0x00476FB0) + plyr.type * 4;
 	if (plyr.slow)
